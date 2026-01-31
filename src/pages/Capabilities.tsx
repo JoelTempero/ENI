@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
-import { ArrowRight, Ruler, Scissors, Layers, Flame, Paintbrush, Wrench, Truck, CheckCircle } from 'lucide-react'
+import { ArrowRight, Ruler, Scissors, Layers, Flame, Paintbrush, Wrench, Truck, CheckCircle, LucideIcon } from 'lucide-react'
 import AnimatedElement from '../components/ui/AnimatedElement'
 import Section from '../components/ui/Section'
 import PageHero from '../components/ui/PageHero'
 import { capabilities, certifications } from '../data/capabilities'
 
-const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+const iconMap: Record<string, LucideIcon> = {
   Ruler,
   Scissors,
   Layers,
