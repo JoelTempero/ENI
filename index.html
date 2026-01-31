@@ -4,36 +4,100 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/ENI/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0A0A0A" />
+    <meta name="theme-color" content="#030303" />
 
-    <!-- Preconnect to Google Fonts -->
+    <!-- Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://api.fontshare.com" />
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <!-- Modern Fonts -->
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-    <title>ENI Manufacturing | Your Trusted Partner in Metal Fabrication</title>
-    <meta name="description" content="ENI Manufacturing - New Zealand's trusted partner for precision metal fabrication, power utilities, architectural facades, and outdoor infrastructure. 30+ years of excellence." />
+    <title>ENI Manufacturing | Precision Metal Engineering</title>
+    <meta name="description" content="ENI Manufacturing - New Zealand's leader in precision metal fabrication, power utilities, and architectural engineering. 30+ years of excellence." />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="ENI Manufacturing | Your Trusted Partner in Metal Fabrication" />
-    <meta property="og:description" content="ENI Manufacturing - New Zealand's trusted partner for precision metal fabrication, power utilities, architectural facades, and outdoor infrastructure." />
-    <meta property="og:image" content="/ENI/assets/og-image.jpg" />
+    <meta property="og:title" content="ENI Manufacturing | Precision Metal Engineering" />
+    <meta property="og:description" content="New Zealand's leader in precision metal fabrication and engineering excellence." />
+    <meta property="og:image" content="/ENI/og-image.jpg" />
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="ENI Manufacturing | Your Trusted Partner" />
-    <meta name="twitter:description" content="New Zealand's trusted partner for precision metal fabrication and engineering solutions." />
-    <script type="module" crossorigin src="/ENI/assets/index-CXtPhAqw.js"></script>
-    <link rel="stylesheet" crossorigin href="/ENI/assets/index-BMEv1QGb.css">
-    <!-- Custom fixes for spacing, padding, and text contrast -->
-    <link rel="stylesheet" href="/ENI/assets/custom-fixes.css">
-    <!-- Fix broken image sources -->
-    <script src="/ENI/assets/image-fixes.js" defer></script>
+    <style>
+      /* Critical CSS for instant load feel */
+      :root {
+        --void-950: #030303;
+        --void-900: #0a0a0b;
+        --electric-500: #339dff;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: var(--void-950);
+        color: #ffffff;
+        font-family: 'Inter', system-ui, sans-serif;
+        overflow-x: hidden;
+      }
+
+      #root {
+        min-height: 100vh;
+      }
+
+      /* Loading state */
+      .loader {
+        position: fixed;
+        inset: 0;
+        background: var(--void-950);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        transition: opacity 0.5s, visibility 0.5s;
+      }
+
+      .loader.hidden {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .loader-ring {
+        width: 60px;
+        height: 60px;
+        border: 3px solid transparent;
+        border-top-color: var(--electric-500);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+    </style>
+    <script type="module" crossorigin src="/ENI/assets/index-BJ1_ZxvF.js"></script>
+    <link rel="modulepreload" crossorigin href="/ENI/assets/vendor-DJT_ntE1.js">
+    <link rel="stylesheet" crossorigin href="/ENI/assets/index-DrY4C0St.css">
   </head>
   <body>
-    <div id="root"></div>
+    <div class="loader" id="loader">
+      <div class="loader-ring"></div>
+    </div>
+    <div id="root"></div>
+    <script>
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          document.getElementById('loader').classList.add('hidden');
+        }, 300);
+      });
+    </script>
   </body>
 </html>
