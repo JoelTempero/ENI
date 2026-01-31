@@ -16,7 +16,9 @@
       "Bash(git push:*)",
       "Bash(git branch:*)",
       "Bash(dir:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(git -C \"D:\\\\Github\\\\Clients\\\\ENI\" log --oneline -10)",
+      "Bash(npm run dev:*)"
     ]
   }
 }
