@@ -1,0 +1,227 @@
+/* ENI Site Design Fixes */
+/* Fixes for: cramped layout, missing padding, dark-on-dark text */
+
+/* ============================================
+   GLOBAL SPACING & PADDING FIXES
+   ============================================ */
+
+/* Add breathing room to main sections */
+section,
+[class*="py-"] {
+  padding-top: clamp(2rem, 5vw, 4rem);
+  padding-bottom: clamp(2rem, 5vw, 4rem);
+}
+
+/* Container padding */
+.container,
+[class*="px-"] {
+  padding-left: clamp(1rem, 4vw, 2rem);
+  padding-right: clamp(1rem, 4vw, 2rem);
+}
+
+/* Card padding improvements */
+[class*="rounded-"][class*="bg-"] {
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+/* Grid gap improvements */
+[class*="grid"] {
+  gap: clamp(1rem, 3vw, 2rem);
+}
+
+/* ============================================
+   TEXT CONTRAST FIXES (Dark on Dark)
+   ============================================ */
+
+/* Fix dark text on dark backgrounds */
+.bg-slate-900 *,
+.bg-slate-800 *,
+[class*="bg-slate-9"] *,
+[class*="bg-slate-8"] *,
+[style*="background"][style*="dark"] * {
+  color: inherit;
+}
+
+/* Ensure text on dark backgrounds is light */
+.bg-slate-900,
+.bg-slate-800,
+[class*="bg-slate-9"],
+[class*="bg-slate-8"] {
+  color: #f1f5f9; /* slate-100 */
+}
+
+.bg-slate-900 h1,
+.bg-slate-900 h2,
+.bg-slate-900 h3,
+.bg-slate-900 h4,
+.bg-slate-800 h1,
+.bg-slate-800 h2,
+.bg-slate-800 h3,
+.bg-slate-800 h4 {
+  color: #ffffff;
+}
+
+.bg-slate-900 p,
+.bg-slate-900 span,
+.bg-slate-800 p,
+.bg-slate-800 span {
+  color: #cbd5e1; /* slate-300 */
+}
+
+/* Fix muted text that's too dark on dark backgrounds */
+.bg-slate-900 .text-slate-600,
+.bg-slate-900 .text-slate-700,
+.bg-slate-900 .text-slate-800,
+.bg-slate-800 .text-slate-600,
+.bg-slate-800 .text-slate-700,
+.bg-slate-800 .text-slate-800 {
+  color: #94a3b8 !important; /* slate-400 */
+}
+
+/* Ensure links are visible on dark backgrounds */
+.bg-slate-900 a,
+.bg-slate-800 a {
+  color: #4797fe;
+}
+
+.bg-slate-900 a:hover,
+.bg-slate-800 a:hover {
+  color: #6bb3ff;
+}
+
+/* ============================================
+   HERO SECTION FIXES
+   ============================================ */
+
+/* Ensure hero content has proper spacing */
+header + section,
+nav + section,
+[class*="hero"],
+[class*="min-h-screen"]:first-of-type {
+  padding-top: clamp(4rem, 10vw, 8rem);
+  padding-bottom: clamp(3rem, 8vw, 6rem);
+}
+
+/* Hero text readability over video/images */
+[class*="min-h-screen"] h1,
+[class*="min-h-screen"] h2 {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   NAVIGATION FIXES
+   ============================================ */
+
+nav,
+header {
+  padding: 1rem clamp(1rem, 4vw, 2rem);
+}
+
+nav a,
+header a {
+  padding: 0.5rem 1rem;
+}
+
+/* ============================================
+   CARD & CONTENT BOX FIXES
+   ============================================ */
+
+/* Service cards, feature cards, etc */
+article,
+[class*="shadow-"] {
+  padding: clamp(1rem, 3vw, 1.5rem);
+}
+
+/* Cards with images */
+[class*="rounded-"] img + div,
+[class*="rounded-"] img + article {
+  padding: 1.25rem;
+}
+
+/* ============================================
+   FOOTER FIXES
+   ============================================ */
+
+footer {
+  padding: clamp(2rem, 6vw, 4rem) clamp(1rem, 4vw, 2rem);
+}
+
+footer .text-slate-400,
+footer .text-slate-500,
+footer .text-gray-400,
+footer .text-gray-500 {
+  color: #94a3b8 !important;
+}
+
+/* ============================================
+   FORM ELEMENT FIXES
+   ============================================ */
+
+input,
+textarea,
+select {
+  padding: 0.75rem 1rem;
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+}
+
+/* ============================================
+   LIST & TEXT SPACING
+   ============================================ */
+
+ul, ol {
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+p + p {
+  margin-top: 1rem;
+}
+
+/* ============================================
+   IMAGE PLACEHOLDER STYLING
+   ============================================ */
+
+/* Style for broken images while they load or if missing */
+img {
+  background-color: #e2e8f0;
+  min-height: 100px;
+}
+
+img[src*="/assets/insights/"],
+img[src*="/assets/projects/"] {
+  background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+  object-fit: cover;
+}
+
+/* ============================================
+   RESPONSIVE IMPROVEMENTS
+   ============================================ */
+
+@media (max-width: 768px) {
+  /* More padding on mobile */
+  .container,
+  [class*="px-"] {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Stack elements with more space */
+  [class*="flex-col"] > * + * {
+    margin-top: 1.5rem;
+  }
+
+  /* Readable text sizes */
+  h1 {
+    font-size: clamp(1.75rem, 6vw, 2.5rem);
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+}
