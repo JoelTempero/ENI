@@ -20,7 +20,7 @@ export default function Capabilities() {
   return (
     <>
       <Helmet>
-        <title>Capabilities | ENI Engineering</title>
+        <title>Capabilities | ENI Manufacturing</title>
         <meta name="description" content="We are New Zealand's trusted partner in metal manufacturing, delivering end-to-end solutions from design to delivery." />
       </Helmet>
 
@@ -46,13 +46,17 @@ export default function Capabilities() {
             const Icon = iconMap[capability.icon] || Wrench
             return (
               <AnimatedElement key={capability.id} delay={index * 0.1}>
-                <div className="card p-8 h-full group hover:shadow-soft-lg transition-all duration-300">
+                <Link to={`/capabilities/${capability.slug}`} className="card p-8 h-full group hover:shadow-soft-lg transition-all duration-300 block">
                   <div className="w-14 h-14 rounded-xl bg-brand-50 flex items-center justify-center text-brand-500 mb-6 group-hover:bg-brand-500 group-hover:text-white transition-colors duration-300">
                     <Icon className="w-7 h-7" />
                   </div>
-                  <h3 className="text-xl font-semibold text-slate-900 mb-3">{capability.title}</h3>
-                  <p className="text-slate-600 leading-relaxed">{capability.description}</p>
-                </div>
+                  <h3 className="text-xl font-semibold text-slate-900 mb-3 group-hover:text-brand-500 transition-colors">{capability.title}</h3>
+                  <p className="text-slate-600 leading-relaxed mb-4">{capability.description}</p>
+                  <span className="inline-flex items-center gap-2 text-brand-500 text-sm font-medium">
+                    Learn more
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </Link>
               </AnimatedElement>
             )
           })}

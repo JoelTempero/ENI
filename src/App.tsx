@@ -11,6 +11,7 @@ import PowerUtilities from './pages/services/PowerUtilities'
 import Facades from './pages/services/Facades'
 import OutdoorInfrastructure from './pages/services/OutdoorInfrastructure'
 import Capabilities from './pages/Capabilities'
+import CapabilityDetail from './pages/CapabilityDetail'
 import Projects from './pages/Projects'
 import ProjectDetail from './pages/ProjectDetail'
 import Insights from './pages/Insights'
@@ -43,6 +44,7 @@ function App() {
           <Route path="/what-we-do/eni-facades" element={<Facades />} />
           <Route path="/what-we-do/outdoor-infrastructure" element={<OutdoorInfrastructure />} />
           <Route path="/capabilities" element={<Capabilities />} />
+          <Route path="/capabilities/:slug" element={<CapabilityDetail />} />
           <Route path="/our-projects" element={<Projects />} />
           <Route path="/our-projects/:slug" element={<ProjectDetail />} />
           <Route path="/insights" element={<Insights />} />

@@ -40,9 +40,14 @@ export interface TeamMember {
 // Capability types
 export interface Capability {
   id: string;
+  slug: string;
   title: string;
   description: string;
+  fullDescription: string;
   icon: string;
+  features: string[];
+  equipment?: string[];
+  image: string;
 }
 
 // Service types
