@@ -13,6 +13,8 @@ const stats = [
   { number: '4', label: 'Certifications', icon: Award },
 ]
 
+const baseUrl = import.meta.env.BASE_URL
+
 export default function Home() {
   const featuredProjects = projects.slice(0, 3)
 
@@ -34,7 +36,7 @@ export default function Home() {
             playsInline
             className="w-full h-full object-cover"
           >
-            <source src="/hero-video.mp4" type="video/mp4" />
+            <source src={`${baseUrl}hero-video.mp4`} type="video/mp4" />
           </video>
           {/* Dark overlay for readability */}
           <div className="absolute inset-0 bg-black/50" />
@@ -44,7 +46,7 @@ export default function Home() {
         <div className="relative z-10 container-custom text-center py-20">
           <AnimatedElement delay={0}>
             <img
-              src="/logo.svg"
+              src={`${baseUrl}logo.svg`}
               alt="ENI Manufacturing"
               className="h-24 md:h-32 lg:h-40 w-auto mx-auto mb-6 brightness-0 invert"
             />

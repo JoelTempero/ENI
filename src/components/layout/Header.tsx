@@ -3,6 +3,8 @@ import { Link, useLocation } from 'react-router-dom'
 import { Menu, X, ChevronDown } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
+const baseUrl = import.meta.env.BASE_URL
+
 const navigation = [
   { name: 'Who We Are', href: '/who-we-are' },
   {
@@ -52,7 +54,7 @@ export default function Header() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
             <img
-              src="/logo.svg"
+              src={`${baseUrl}logo.svg`}
               alt="ENI Manufacturing"
               className="h-10 w-auto"
             />
