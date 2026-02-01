@@ -5,8 +5,8 @@ import path from 'path'
 // https://vitejs.dev/config/
 export default defineConfig(({ command }) => ({
   plugins: [react()],
-  // Use '/' for dev server, '/ENI/' for production build (GitHub Pages)
-  base: command === 'serve' ? '/' : '/ENI/',
+  // Use '/' for dev server, './' for production build (works locally and on GitHub Pages)
+  base: command === 'serve' ? '/' : './',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

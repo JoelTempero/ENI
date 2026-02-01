@@ -5,7 +5,9 @@ import { HelmetProvider } from 'react-helmet-async'
 import App from './App'
 import './index.css'
 
-const basename = import.meta.env.BASE_URL
+// Handle basename: use empty string for relative base, otherwise use the BASE_URL
+const baseUrl = import.meta.env.BASE_URL
+const basename = baseUrl === './' ? '' : baseUrl
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
