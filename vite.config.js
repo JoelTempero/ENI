@@ -6,8 +6,8 @@ export default defineConfig(function (_a) {
     var command = _a.command;
     return ({
         plugins: [react()],
-        // Use '/' for dev server, './' for production build (works locally and on GitHub Pages)
-        base: command === 'serve' ? '/' : './',
+        // Use '/' for dev server, '/ENI/' for production build (GitHub Pages)
+        base: command === 'serve' ? '/' : '/ENI/',
         resolve: {
             alias: {
                 '@': path.resolve(__dirname, './src'),

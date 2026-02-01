@@ -22,7 +22,8 @@
       "Bash(taskkill:*)",
       "Bash(npm run deploy:*)",
       "Bash(git status:*)",
-      "Bash(npm run preview:*)"
+      "Bash(npm run preview:*)",
+      "Bash(gh api:*)"
     ]
   }
 }
