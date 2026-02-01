@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 import { Phone, Mail, MapPin, Linkedin, Instagram } from 'lucide-react'
 
+const baseUrl = import.meta.env.BASE_URL
+
 const footerLinks = {
   services: [
     { name: 'ENI Manufacturing', href: '/what-we-do/contract-manufacturing' },
@@ -25,9 +27,11 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="inline-block mb-6">
-              <span className="text-2xl font-display font-bold">
-                ENI<span className="font-light text-brand-400 ml-1">Engineering</span>
-              </span>
+              <img
+                src={`${baseUrl}logo-white.svg`}
+                alt="ENI Manufacturing"
+                className="h-10 w-auto"
+              />
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed mb-6">
               New Zealand's trusted partner in precision metal fabrication and engineering excellence. 30+ years of innovation.
@@ -134,7 +138,7 @@ export default function Footer() {
       <div className="border-t border-slate-800">
         <div className="container-custom py-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-slate-500 text-sm">
-            &copy; {new Date().getFullYear()} ENI Engineering. All rights reserved.
+            &copy; {new Date().getFullYear()} ENI Manufacturing. All rights reserved.
           </p>
           <div className="flex gap-6">
             <Link
