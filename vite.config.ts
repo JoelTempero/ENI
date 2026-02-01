@@ -2,11 +2,11 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from 'path'
 
-// For development, use base: '/'
-// For production/GitHub Pages, use: base: '/ENI/'
-export default defineConfig({
+// https://vitejs.dev/config/
+export default defineConfig(({ command }) => ({
   plugins: [react()],
-  base: '/',
+  // Use '/' for dev server, '/ENI/' for production build (GitHub Pages)
+  base: command === 'serve' ? '/' : '/ENI/',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
@@ -25,4 +25,4 @@ export default defineConfig({
       },
     },
   },
-})
+}))
