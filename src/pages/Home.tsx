@@ -46,9 +46,9 @@ export default function Home() {
         <div className="relative z-10 container-custom text-center py-20">
           <AnimatedElement delay={0}>
             <img
-              src={`${baseUrl}logo.svg`}
+              src={`${baseUrl}logo-hero.svg`}
               alt="ENI Manufacturing"
-              className="h-24 md:h-32 lg:h-40 w-auto mx-auto mb-6 brightness-0 invert"
+              className="h-24 md:h-32 lg:h-40 w-auto mx-auto mb-6"
             />
           </AnimatedElement>
 

@@ -4,7 +4,7 @@ import { ArrowRight, Mail, Shield, Leaf, Heart, Users } from 'lucide-react'
 import AnimatedElement from '../components/ui/AnimatedElement'
 import Section from '../components/ui/Section'
 import PageHero from '../components/ui/PageHero'
-import { teamMembers, leadershipTeam } from '../data/team'
+import { teamMembers } from '../data/team'
 
 const values = [
   {
@@ -162,11 +162,11 @@ export default function WhoWeAre() {
         </div>
       </Section>
 
-      {/* Leadership Team */}
+      {/* Our Team */}
       <Section background="light">
         <AnimatedElement>
           <div className="text-center mb-12">
-            <span className="tag tag-brand mb-4">Leadership</span>
+            <span className="tag tag-brand mb-4">Our People</span>
             <h2 className="text-display-md text-slate-900 mb-4">
               Our Team
             </h2>
@@ -176,25 +176,25 @@ export default function WhoWeAre() {
           </div>
         </AnimatedElement>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {leadershipTeam.map((member, index) => (
-            <AnimatedElement key={member.id} delay={index * 0.1}>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {teamMembers.map((member, index) => (
+            <AnimatedElement key={member.id} delay={index * 0.05}>
               <div className="card p-6 text-center h-full">
                 {member.image ? (
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="w-24 h-24 rounded-full object-cover mx-auto mb-4"
+                    className="w-40 h-40 rounded-full object-cover mx-auto mb-6"
                   />
                 ) : (
-                  <div className="w-24 h-24 rounded-full bg-brand-50 flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl font-display font-bold text-brand-500">
+                  <div className="w-40 h-40 rounded-full bg-brand-50 flex items-center justify-center mx-auto mb-6">
+                    <span className="text-4xl font-display font-bold text-brand-500">
                       {member.name.split(' ').map(n => n[0]).join('')}
                     </span>
                   </div>
                 )}
-                <h3 className="text-lg font-semibold text-slate-900 mb-1">{member.name}</h3>
-                <p className="text-sm text-brand-500 mb-3">{member.title}</p>
+                <h3 className="text-xl font-semibold text-slate-900 mb-1">{member.name}</h3>
+                <p className="text-sm text-brand-500 mb-4">{member.title}</p>
                 <p className="text-sm text-slate-600 leading-relaxed mb-4">{member.bio}</p>
                 {member.email && (
                   <a
@@ -202,55 +202,13 @@ export default function WhoWeAre() {
                     className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-brand-500 transition-colors"
                   >
                     <Mail className="w-4 h-4" />
-                    Email
+                    {member.email}
                   </a>
                 )}
               </div>
             </AnimatedElement>
           ))}
         </div>
-
-        {/* All Team Members */}
-        <AnimatedElement delay={0.3}>
-          <div className="mt-12">
-            <h3 className="text-xl font-semibold text-slate-900 mb-6 text-center">Our Extended Team</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {teamMembers.filter(m => !leadershipTeam.includes(m)).map((member) => (
-                <div key={member.id} className="card p-6">
-                  <div className="flex items-start gap-4">
-                    {member.image ? (
-                      <img
-                        src={member.image}
-                        alt={member.name}
-                        className="w-16 h-16 rounded-full object-cover flex-shrink-0"
-                      />
-                    ) : (
-                      <div className="w-16 h-16 rounded-full bg-surface-100 flex items-center justify-center flex-shrink-0">
-                        <span className="text-sm font-semibold text-slate-600">
-                          {member.name.split(' ').map(n => n[0]).join('')}
-                        </span>
-                      </div>
-                    )}
-                    <div>
-                      <h4 className="font-semibold text-slate-900">{member.name}</h4>
-                      <p className="text-sm text-brand-500 mb-2">{member.title}</p>
-                    </div>
-                  </div>
-                  <p className="text-sm text-slate-600 leading-relaxed mt-4">{member.bio}</p>
-                  {member.email && (
-                    <a
-                      href={`mailto:${member.email}`}
-                      className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-brand-500 transition-colors mt-3"
-                    >
-                      <Mail className="w-4 h-4" />
-                      {member.email}
-                    </a>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </AnimatedElement>
       </Section>
 
       {/* Careers CTA */}

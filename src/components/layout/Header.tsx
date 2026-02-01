@@ -28,6 +28,9 @@ export default function Header() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const location = useLocation()
 
+  const isHomepage = location.pathname === '/'
+  const isTransparent = isHomepage && !isScrolled
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20)
@@ -53,11 +56,19 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <img
-              src={`${baseUrl}logo.svg`}
-              alt="ENI Manufacturing"
-              className="h-10 w-auto"
-            />
+            {isTransparent ? (
+              <img
+                src={`${baseUrl}logo-white.svg`}
+                alt="ENI Manufacturing"
+                className="h-10 w-auto"
+              />
+            ) : (
+              <img
+                src={`${baseUrl}logo.svg`}
+                alt="ENI Manufacturing"
+                className="h-10 w-auto"
+              />
+            )}
           </Link>
 
           {/* Desktop Navigation */}
@@ -74,8 +85,10 @@ export default function Header() {
                   className={`flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
                     location.pathname === item.href ||
                     (item.children && location.pathname.startsWith(item.href))
-                      ? 'text-brand-500'
-                      : 'text-slate-700 hover:text-brand-500 hover:bg-surface-100'
+                      ? 'text-brand-400'
+                      : isTransparent
+                        ? 'text-white hover:text-brand-400'
+                        : 'text-slate-700 hover:text-brand-500 hover:bg-surface-100'
                   }`}
                 >
                   {item.name}
@@ -120,7 +133,11 @@ export default function Header() {
           <div className="hidden lg:block">
             <Link
               to="/contact-us"
-              className="btn-primary text-sm"
+              className={`btn text-sm ${
+                isTransparent
+                  ? 'bg-brand-400 text-white hover:bg-brand-500'
+                  : 'btn-primary'
+              }`}
             >
               Contact Us
             </Link>
@@ -129,7 +146,11 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-slate-700 hover:text-brand-500 transition-colors"
+            className={`lg:hidden p-2 transition-colors ${
+              isTransparent
+                ? 'text-white hover:text-brand-400'
+                : 'text-slate-700 hover:text-brand-500'
+            }`}
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
