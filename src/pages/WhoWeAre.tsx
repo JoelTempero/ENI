@@ -33,7 +33,7 @@ export default function WhoWeAre() {
   return (
     <>
       <Helmet>
-        <title>Who We Are | ENI Engineering</title>
+        <title>Who We Are | ENI Manufacturing</title>
         <meta name="description" content="At ENI Manufacturing, we're driven by a deep sense of purpose: to create a space where innovation and people flourish together. For over 30 years, our story has been about more than just metalwork." />
       </Helmet>
 
@@ -171,7 +171,7 @@ export default function WhoWeAre() {
               Our Team
             </h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              Meet the people driving ENI Engineering forward with decades of experience and a passion for excellence.
+              Meet the people driving ENI Manufacturing forward with decades of experience and a passion for excellence.
             </p>
           </div>
         </AnimatedElement>
@@ -180,11 +180,19 @@ export default function WhoWeAre() {
           {leadershipTeam.map((member, index) => (
             <AnimatedElement key={member.id} delay={index * 0.1}>
               <div className="card p-6 text-center h-full">
-                <div className="w-20 h-20 rounded-full bg-brand-50 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-display font-bold text-brand-500">
-                    {member.name.split(' ').map(n => n[0]).join('')}
-                  </span>
-                </div>
+                {member.image ? (
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-24 h-24 rounded-full object-cover mx-auto mb-4"
+                  />
+                ) : (
+                  <div className="w-24 h-24 rounded-full bg-brand-50 flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl font-display font-bold text-brand-500">
+                      {member.name.split(' ').map(n => n[0]).join('')}
+                    </span>
+                  </div>
+                )}
                 <h3 className="text-lg font-semibold text-slate-900 mb-1">{member.name}</h3>
                 <p className="text-sm text-brand-500 mb-3">{member.title}</p>
                 <p className="text-sm text-slate-600 leading-relaxed mb-4">{member.bio}</p>
@@ -206,18 +214,38 @@ export default function WhoWeAre() {
         <AnimatedElement delay={0.3}>
           <div className="mt-12">
             <h3 className="text-xl font-semibold text-slate-900 mb-6 text-center">Our Extended Team</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {teamMembers.filter(m => !leadershipTeam.includes(m)).map((member) => (
-                <div key={member.id} className="card p-4 flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-surface-100 flex items-center justify-center flex-shrink-0">
-                    <span className="text-sm font-semibold text-slate-600">
-                      {member.name.split(' ').map(n => n[0]).join('')}
-                    </span>
+                <div key={member.id} className="card p-6">
+                  <div className="flex items-start gap-4">
+                    {member.image ? (
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-16 h-16 rounded-full object-cover flex-shrink-0"
+                      />
+                    ) : (
+                      <div className="w-16 h-16 rounded-full bg-surface-100 flex items-center justify-center flex-shrink-0">
+                        <span className="text-sm font-semibold text-slate-600">
+                          {member.name.split(' ').map(n => n[0]).join('')}
+                        </span>
+                      </div>
+                    )}
+                    <div>
+                      <h4 className="font-semibold text-slate-900">{member.name}</h4>
+                      <p className="text-sm text-brand-500 mb-2">{member.title}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-medium text-slate-900">{member.name}</h4>
-                    <p className="text-sm text-slate-500">{member.title}</p>
-                  </div>
+                  <p className="text-sm text-slate-600 leading-relaxed mt-4">{member.bio}</p>
+                  {member.email && (
+                    <a
+                      href={`mailto:${member.email}`}
+                      className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-brand-500 transition-colors mt-3"
+                    >
+                      <Mail className="w-4 h-4" />
+                      {member.email}
+                    </a>
+                  )}
                 </div>
               ))}
             </div>
