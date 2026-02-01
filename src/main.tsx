@@ -5,10 +5,12 @@ import { HelmetProvider } from 'react-helmet-async'
 import App from './App'
 import './index.css'
 
+const basename = import.meta.env.BASE_URL
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <HelmetProvider>
-      <BrowserRouter basename="/ENI">
+      <BrowserRouter basename={basename}>
         <App />
       </BrowserRouter>
     </HelmetProvider>
