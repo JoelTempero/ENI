@@ -142,7 +142,7 @@ export default function Footer() {
           </p>
           <div className="flex gap-6">
             <Link
-              to="/who-we-are"
+              to="/responsibility-policy"
               className="text-slate-500 hover:text-white text-sm transition-colors"
             >
               Our Responsibility Policy

@@ -17,6 +17,7 @@ import ProjectDetail from './pages/ProjectDetail'
 import Insights from './pages/Insights'
 import InsightDetail from './pages/InsightDetail'
 import Contact from './pages/Contact'
+import ResponsibilityPolicy from './pages/ResponsibilityPolicy'
 import NotFound from './pages/NotFound'
 
 // Scroll to top on route change
@@ -50,6 +51,7 @@ function App() {
           <Route path="/insights" element={<Insights />} />
           <Route path="/resources/insights/:slug" element={<InsightDetail />} />
           <Route path="/contact-us" element={<Contact />} />
+          <Route path="/responsibility-policy" element={<ResponsibilityPolicy />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>

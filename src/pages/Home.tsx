@@ -1,17 +1,10 @@
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
-import { ArrowRight, Award, Users, Calendar, Factory } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import AnimatedElement from '../components/ui/AnimatedElement'
 import Section from '../components/ui/Section'
 import { services } from '../data/services'
 import { projects } from '../data/projects'
-
-const stats = [
-  { number: '30+', label: 'Years of Excellence', icon: Calendar },
-  { number: '100+', label: 'Projects Delivered', icon: Factory },
-  { number: '50+', label: 'Team Members', icon: Users },
-  { number: '4', label: 'Certifications', icon: Award },
-]
 
 const baseUrl = import.meta.env.BASE_URL
 
@@ -77,25 +70,6 @@ export default function Home() {
           </AnimatedElement>
         </div>
       </section>
-
-      {/* Stats Section */}
-      <Section background="light" className="py-12 md:py-16">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {stats.map((stat, index) => (
-            <AnimatedElement key={stat.label} delay={index * 0.1}>
-              <div className="text-center">
-                <div className="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center mx-auto mb-3">
-                  <stat.icon className="w-6 h-6 text-brand-500" />
-                </div>
-                <p className="text-3xl md:text-4xl font-display font-bold text-slate-900 mb-1">
-                  {stat.number}
-                </p>
-                <p className="text-sm text-slate-600">{stat.label}</p>
-              </div>
-            </AnimatedElement>
-          ))}
-        </div>
-      </Section>
 
       {/* What We Do Section */}
       <Section>
