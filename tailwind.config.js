@@ -9,16 +9,16 @@ export default {
       colors: {
         // Light & Clean Industrial Palette
         brand: {
-          50: '#e6f2ff',
-          100: '#b3d9ff',
-          200: '#80bfff',
-          300: '#4da6ff',
-          400: '#1a8cff',
-          500: '#0066CC', // Primary brand blue
-          600: '#0052a3',
-          700: '#003d7a',
-          800: '#002952',
-          900: '#001429',
+          50: '#eef6ff',
+          100: '#d9ebff',
+          200: '#b8d9ff',
+          300: '#8ac2ff',
+          400: '#5aa4ff', // Primary brand blue
+          500: '#5aa4ff',
+          600: '#4080d4',
+          700: '#3366aa',
+          800: '#264d80',
+          900: '#1a3355',
         },
         accent: {
           50: '#fff4e6',

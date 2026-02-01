@@ -51,14 +51,11 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <div className="flex items-center">
-              <span className="text-2xl font-display font-bold text-slate-900">
-                ENI
-              </span>
-              <span className="text-2xl font-display font-light text-brand-500 ml-1">
-                Engineering
-              </span>
-            </div>
+            <img
+              src="/logo.svg"
+              alt="ENI Manufacturing"
+              className="h-10 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}

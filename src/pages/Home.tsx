@@ -19,8 +19,8 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>ENI Engineering | Precision Metal Manufacturing NZ</title>
-        <meta name="description" content="ENI Engineering - New Zealand's trusted partner in precision metal fabrication, power utilities, facades, and outdoor infrastructure. 30+ years of excellence." />
+        <title>ENI Manufacturing | Your Trusted Partner</title>
+        <meta name="description" content="ENI Manufacturing - Your trusted partner in precision metal fabrication, power utilities, facades, and outdoor infrastructure. 30+ years of excellence." />
       </Helmet>
 
       {/* Hero Section */}
@@ -65,15 +65,19 @@ export default function Home() {
               </AnimatedElement>
             </div>
 
-            {/* Image */}
+            {/* Video */}
             <AnimatedElement delay={0.2} direction="right">
               <div className="relative">
                 <div className="relative rounded-2xl overflow-hidden shadow-soft-xl">
-                  <img
-                    src="https://www.enieng.co.nz/img/containers/assets/superstop/ss_03.jpg/ea9794e3ff7e0b7cfb95a88b9911a1d0.jpg"
-                    alt="ENI Engineering manufacturing facility"
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
                     className="w-full aspect-[4/3] object-cover"
-                  />
+                  >
+                    <source src="/hero-video.mp4" type="video/mp4" />
+                  </video>
                 </div>
                 {/* Stats overlay */}
                 <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-soft-lg p-6 max-w-xs">
