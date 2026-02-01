@@ -24,76 +24,55 @@ export default function Home() {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center pt-20">
-        {/* Background */}
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-gradient-to-br from-surface-100 via-surface-50 to-white" />
-          <div className="absolute inset-0 grid-pattern opacity-50" />
+      <section className="relative min-h-screen flex items-center justify-center">
+        {/* Video Background */}
+        <div className="absolute inset-0">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src="/hero-video.mp4" type="video/mp4" />
+          </video>
+          {/* Dark overlay for readability */}
+          <div className="absolute inset-0 bg-black/50" />
         </div>
 
-        <div className="container-custom py-16 lg:py-24">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Content */}
-            <div>
-              <AnimatedElement delay={0}>
-                <span className="tag tag-brand mb-6">Your Trusted Partner</span>
-              </AnimatedElement>
+        {/* Content */}
+        <div className="relative z-10 container-custom text-center py-20">
+          <AnimatedElement delay={0}>
+            <img
+              src="/logo.svg"
+              alt="ENI Manufacturing"
+              className="h-24 md:h-32 lg:h-40 w-auto mx-auto mb-6 brightness-0 invert"
+            />
+          </AnimatedElement>
 
-              <AnimatedElement delay={0.1}>
-                <h1 className="text-display-xl text-slate-900 mb-6">
-                  ENI{' '}
-                  <span className="text-gradient">Manufacturing</span>
-                </h1>
-              </AnimatedElement>
+          <AnimatedElement delay={0.1}>
+            <p className="text-xl md:text-2xl lg:text-3xl font-display font-medium text-white mb-6">
+              Your Trusted Partner
+            </p>
+          </AnimatedElement>
 
-              <AnimatedElement delay={0.2}>
-                <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-8 max-w-xl">
-                  At ENI Manufacturing, we're not just about cutting-edge technology. For over 30 years, our team has been the driving force behind our focus on innovation and excellence.
-                </p>
-              </AnimatedElement>
+          <AnimatedElement delay={0.2}>
+            <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-8 max-w-2xl mx-auto">
+              At ENI Manufacturing, we're not just about cutting-edge technology. For over 30 years, our team has been the driving force behind our focus on innovation and excellence.
+            </p>
+          </AnimatedElement>
 
-              <AnimatedElement delay={0.3}>
-                <div className="flex flex-wrap gap-4">
-                  <Link to="/contact-us" className="btn-primary">
-                    Contact Us
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                  <Link to="/our-projects" className="btn-outline">
-                    View Our Work
-                  </Link>
-                </div>
-              </AnimatedElement>
+          <AnimatedElement delay={0.3}>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link to="/contact-us" className="btn-primary">
+                Contact Us
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link to="/our-projects" className="btn bg-white/10 text-white border-2 border-white hover:bg-white hover:text-slate-900">
+                View Our Work
+              </Link>
             </div>
-
-            {/* Video */}
-            <AnimatedElement delay={0.2} direction="right">
-              <div className="relative">
-                <div className="relative rounded-2xl overflow-hidden shadow-soft-xl">
-                  <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="w-full aspect-[4/3] object-cover"
-                  >
-                    <source src="/hero-video.mp4" type="video/mp4" />
-                  </video>
-                </div>
-                {/* Stats overlay */}
-                <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-soft-lg p-6 max-w-xs">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-brand-50 flex items-center justify-center">
-                      <Calendar className="w-6 h-6 text-brand-500" />
-                    </div>
-                    <div>
-                      <p className="text-2xl font-display font-bold text-slate-900">30+</p>
-                      <p className="text-sm text-slate-600">Years of Excellence</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </AnimatedElement>
-          </div>
+          </AnimatedElement>
         </div>
       </section>
 
