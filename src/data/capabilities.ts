@@ -45,7 +45,7 @@ export const capabilities: Capability[] = [
       'CNC-controlled Press Brakes (up to 3.6m)',
       '3D folding programming software',
     ],
-    image: 'https://www.enieng.co.nz/img/containers/assets/capabilities/210223_eni_040.jpg/d4b3c8a9e5f2b7c1d8e4a6f3b9c2d5e8.jpg',
+    image: 'https://www.enieng.co.nz/img/containers/assets/capabilities/_y2a5762.jpg/624adb0acb60b3eb1f74b29cc837f560.jpg',
   },
   {
     id: '3',
@@ -69,7 +69,7 @@ export const capabilities: Capability[] = [
       'Markforged FX-10 Printer - Onyx, Onyx FR (flame-retardant), Onyx ESD (electrostatic discharge protection)',
       'Continuous carbon fiber reinforcement capability',
     ],
-    image: 'https://www.enieng.co.nz/img/containers/assets/capabilities/210223_eni_052.jpg/a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6.jpg',
+    image: 'https://www.enieng.co.nz/img/containers/assets/capabilities/copper-heatsink-1.jpg/41d3ed11c25868d3f31df42ff0eed029.jpg',
   },
   {
     id: '4',
@@ -94,7 +94,7 @@ export const capabilities: Capability[] = [
       'Welding robotics systems',
       'MIG, TIG, and Resistance welding equipment',
     ],
-    image: 'https://www.enieng.co.nz/img/containers/assets/capabilities/210223_eni_075.jpg/b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7.jpg',
+    image: 'https://www.enieng.co.nz/img/containers/assets/capabilities/_y2a5879.jpg/24872ae373d212e14ab70234ac744800.jpg',
   },
   {
     id: '5',
@@ -118,7 +118,7 @@ export const capabilities: Capability[] = [
       'PLC-controlled raised oven for efficiency',
       'Semi-automated railing system',
     ],
-    image: 'https://www.enieng.co.nz/img/containers/assets/capabilities/210223_eni_082.jpg/c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8.jpg',
+    image: 'https://www.enieng.co.nz/img/containers/assets/capabilities/210223_eni_099_rt.jpg/f62a4960846bbf92e00d0b2ce6c33e01.jpg',
   },
   {
     id: '6',
@@ -142,7 +142,7 @@ export const capabilities: Capability[] = [
       'Quality control systems',
       'Coordinated production workflow tools',
     ],
-    image: 'https://www.enieng.co.nz/img/containers/assets/capabilities/210223_eni_090.jpg/d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9.jpg',
+    image: 'https://www.enieng.co.nz/img/containers/assets/capabilities/_y2a5509.jpg/ae1047c885343f18187af3017d5f9978.jpg',
   },
   {
     id: '7',
@@ -166,7 +166,7 @@ export const capabilities: Capability[] = [
       'In-house installation team',
       'Packaging and shipping facilities',
     ],
-    image: 'https://www.enieng.co.nz/img/containers/assets/capabilities/210223_eni_068_rt-1740006088.jpg/e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0.jpg',
+    image: 'https://www.enieng.co.nz/img/containers/assets/capabilities/210223_eni_068_rt-1740006088.jpg/bcd00551bf93825cdbfaaf19095ccc5d.jpg',
   },
 ]
 
